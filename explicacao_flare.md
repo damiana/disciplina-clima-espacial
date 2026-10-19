@@ -71,11 +71,11 @@ Estes horários são **estimativas** baseadas no formato da curva, e não verdad
 
 ## 3. O cálculo da energia em três etapas
 
-| Etapa | O que fizemos | Resultado |
+| Etapa | O que foi feito | Resultado |
 |---|---|---|
-| 1 | Somamos a energia recebida ao longo do flare | **0,411 J/m²** |
-| 2 | Convertemos para ergs | **4,11 × 10⁶ erg/m²** |
-| 3 | Consideramos a distância Sol–Terra | **1,16 × 10³⁰ erg** |
+| 1 | Somado a energia recebida ao longo do flare | **0,411 J/m²** |
+| 2 | Convertido para ergs | **4,11 × 10⁶ erg/m²** |
+| 3 | Considerado a distância Sol–Terra | **1,16 × 10³⁰ erg** |
 | Final | Energia estimada do flare | **1,16 × 10³⁰ erg = 1,16 × 10²³ J** |
 
 ### Etapa 1 — Energia recebida por metro quadrado: 0,411 J/m²
@@ -92,7 +92,7 @@ $$\text{energia por m}^2 = \int \left[F(t) - F_{\text{fundo}}\right] dt$$
 ### Etapa 2 — Conversão para ergs: 4,11 × 10⁶ erg/m²
 
 - **O que é:** o mesmo valor da Etapa 1, em outra unidade.
-- **Como chegamos:** joule e erg medem energia, assim como metro e centímetro medem distância. **1 joule = 10 milhões de ergs**, então:
+- **Como:** joule e erg medem energia, assim como metro e centímetro medem distância. **1 joule = 10 milhões de ergs**, então:
 
   0,411 J/m² × 10.000.000 = **4,11 × 10⁶ erg/m²**
 
@@ -145,19 +145,3 @@ Para executar:
 source .venv/bin/activate
 python analise_goes.py
 ```
-
----
-
-## 6. Roteiro para a apresentação (3–5 minutos)
-
-> Eu escolhi analisar um flare solar, que é uma explosão na superfície do Sol. Esse aconteceu em 13 de maio de 2013 e foi classificado como X2.8, uma das categorias mais fortes.
->
-> Usei dados do satélite GOES-15, que fica em órbita da Terra medindo os raios X que vêm do Sol. A cada 2 segundos, ele registra quanta energia de raios X chega em um metro quadrado. Os dados vêm num arquivo FITS, que é um formato muito usado em astronomia, e eu li esse arquivo com Python.
->
-> *(mostrar o gráfico)* Aqui está a curva. A linha azul é a faixa de raios X usada para classificar flares. Dá para ver o padrão típico: uma subida muito rápida e uma descida lenta, que dura horas. O flare começou às 15:48, quando a curva passou a subir sem parar. O pico foi às 16:05, com um valor 2,8 vezes acima do mínimo da classe X, e é daí que vem o nome X2.8. E considerei que terminou às 19:45, quando a curva voltou ao nível do começo. Esses horários são estimativas, porque a curva desce aos poucos.
->
-> A linha tracejada é o fundo: o Sol já emitia um pouco de raios X antes do flare. Eu desconto esse valor para contar só a energia do flare.
->
-> O cálculo teve três etapas. Primeiro, como o satélite mede energia por segundo, eu somei a energia de cada intervalo de 2 segundos durante as 4 horas, que é a área azul do gráfico. Deu 0,41 joule por metro quadrado. Segundo, converti para ergs, a unidade mais usada em astronomia: 1 joule são 10 milhões de ergs, então ficou 4,1 milhões de ergs por metro quadrado. Terceiro, como o Sol emitiu para todos os lados, igual a uma lâmpada no meio de uma sala, essa energia se espalhou por uma esfera do tamanho da distância Sol–Terra. Multiplicando pela área dessa esfera, chego à energia total.
->
-> O resultado foi cerca de 1,2 × 10³⁰ ergs, ou 1,2 × 10²³ joules. Isso é mais ou menos a eletricidade que a humanidade inteira usa em mil anos, emitida em 4 horas. E isso é só a parte em raios X: a energia total do flare foi ainda maior.
