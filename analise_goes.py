@@ -22,6 +22,7 @@ import matplotlib
 matplotlib.use("Agg")  # só salva o PNG, sem abrir janela
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
+from matplotlib.offsetbox import AnchoredOffsetbox, TextArea, VPacker
 from astropy.io import fits
 
 PASTA = Path(__file__).parent
@@ -216,6 +217,20 @@ ax.set_title("Flare X2.8 visto pelo GOES-15", loc="left")
 ax.grid(color="#e4e3df")
 ax.spines[["top", "right"]].set_visible(False)
 ax.legend(loc="lower center", frameon=False)
+
+# Caixa com o resultado final, na área livre acima da cauda do flare
+# (entre o pico e a linha do fim). O valor vem do cálculo da Etapa 3.
+mantissa, expoente = f"{energia_total_erg:.2e}".split("e")
+linha_1 = TextArea(f"Energia estimada: {mantissa.replace('.', ',')} × 10$^{{{int(expoente)}}}$ erg",
+                   textprops=dict(fontsize=13, fontweight="bold"))
+linha_2 = TextArea("Raios X (1–8 Å) | Fundo subtraído", textprops=dict(fontsize=10, color="#52514e"))
+caixa = AnchoredOffsetbox(loc="upper right", bbox_to_anchor=(0.815, 0.95), bbox_transform=ax.transAxes,
+                          child=VPacker(children=[linha_1, linha_2], align="center", pad=0, sep=6),
+                          pad=0.6, frameon=True, borderpad=0)
+caixa.patch.set_boxstyle("round,pad=0.2")
+caixa.patch.set_facecolor("white")
+caixa.patch.set_edgecolor("#c3c2b7")
+ax.add_artist(caixa)
 fig.tight_layout()
 fig.savefig(PASTA_RESULTADOS / "goes_flare_x28.png", dpi=150)
 
