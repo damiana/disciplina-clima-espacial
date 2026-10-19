@@ -27,15 +27,15 @@ Estimar quanta energia em **raios X** o Sol emitiu durante o flare (explosão so
 
 ### Etapa 1: energia recebida por metro quadrado
 
-O satélite mede energia **por segundo**. Para ter a energia total, fazemos três coisas:
+O satélite mede energia **por segundo**. Para ter a energia total, precisamos de três coisas:
 
-1. Tiramos o fundo de cada medição, para contar só o que veio do flare.
-2. Multiplicamos o valor de cada medição pelo tempo até a próxima (~2 s).
-3. Somamos todos esses pedacinhos, do início ao fim do flare.
+1. Tirar o fundo de cada medição, para contar só o que veio do flare.
+2. Multiplicar o valor de cada medição pelo tempo até a próxima (~2 s).
+3. Somar todos esses pedacinhos, do início ao fim do flare.
 
 Essa soma é chamada de **integral do fluxo**. É a área azul do gráfico.
 
-> **Resultado:** 0,411 J/m²
+> **Resultado:** 0,411 J/m² (joules por metro quadrado)
 
 ### Etapa 2: converter de joules para ergs
 
@@ -57,7 +57,7 @@ Essa energia se espalhou numa esfera com raio igual à distância Sol–Terra (d
 
 ## Resultado final
 
-> **Energia irradiada em raios X (1–8 Å): 1,16 × 10³⁰ erg = 1,16 × 10²³ J**
+> **Energia irradiada em raios X (1–8 Å -> angstrom): 1,16 × 10³⁰ erg = 1,16 × 10²³ J**
 
 Isso é aproximadamente a eletricidade que a humanidade inteira consome em **1.000 anos**, emitida pelo Sol em cerca de 4 horas.
 
