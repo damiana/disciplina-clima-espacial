@@ -1,0 +1,5 @@
+etapa,o_que_fizemos,resultado
+1,Somamos a energia recebida ao longo do flare (já sem o fundo),0.411 J/m2
+2,Convertemos para ergs,4.108e+06 erg/m2
+3,Consideramos a distância Sol-Terra,1.155e+30 erg
+Final,"Energia estimada do flare (raios X, 1-8 A)",1.16e+30 erg = 1.16e+23 J
